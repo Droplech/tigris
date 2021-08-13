@@ -3024,6 +3024,7 @@ ul{
     }
     .questions_item_title span{
         font-size: 13px;
+        max-width: 75%;
     }
     .services_content .tab_links ul{
         flex-wrap: wrap;
