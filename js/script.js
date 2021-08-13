@@ -17,23 +17,24 @@ $(document).ready(function(){
         $('.num_page').removeClass('num_page-active')
         $(this).addClass('num_page-active')
     })
-
-
-    // range
-    
-    $( "#slider-range-min" ).slider({
-        range: "min",
-        value: 88,
-        min: 1,
-        max: 200,
-        slide: function( event, ui ) {
-          $( "#amount" ).val(ui.value);
+    $(document).scroll(function(){
+        if( $(window).scrollTop() >= $('.navigation').height() ){
+            $('.fixed_nav').addClass('fixed_nav-active')
+        }else{
+            $('.fixed_nav').removeClass('fixed_nav-active')
         }
-    });
+         
+    })
+    $('.burger_btn').click(function(){
+        $('.burger_menu').fadeIn()
+        $('html').css("overflow","hidden")
+    })
+    $('.close_btn, .burger_menu ul li a').click(function(){
+        $('.burger_menu').fadeOut()
+        $('html').css("overflow","auto")
+    })
 
-    $( "#amount" ).val($( "#slider-range-min" ).slider( "value" ) );
     
-    // range/
 
 
     $('.select').on('click', '.select__head', function () {
@@ -80,14 +81,67 @@ $(document).ready(function(){
     })
 
 
+    $('.calc_mobil_open').click(function(){
+        if( !$('.open_form_mobilCalc').hasClass('mobilCalc-active')){
+            $('.open_form_mobilCalc').addClass('mobilCalc-active');
+            $('.open_form_mobilCalc').slideDown()
+        }else{
+            $('.open_form_mobilCalc').addClass('mobilCalc-active');
+            $('.open_form_mobilCalc').slideUp()
+        }
+    })
+
+    $('.burger_down_menu').click(function(){
+        if( !$(this).hasClass('down_menu-active') ){
+            $('.burger_down_menu').removeClass('down_menu-active');
+            $('.burger_down_menu').next().slideUp()
+            $(this).addClass('down_menu-active');
+            $(this).next().slideDown()
+
+        }else{
+            $(this).removeClass('down_menu-active');
+            $(this).next().slideUp()
+        }
+    })
+ 
+
+
+    
+    // range
+        
+    $( "#slider-range-min" ).slider({
+        range: "min",
+        value: 88,
+        min: 1,
+        max: 200,
+        slide: function( event, ui ) {
+        $( "#amount" ).val(ui.value);
+        }
+    });
+
+    $( "#amount" ).val($( "#slider-range-min" ).slider( "value" ) );
+
+
+    // range/
+
 
     new Swiper('.objects_slider_container',{
-        slidesPerView: 3,
-        spaceBetween: 18,
+        slidesPerView: 1,
+        spaceBetween: 0,
         navigation: {
             nextEl: "#objects_next",
             prevEl: "#objects_prev",
-          },
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 2,
+                spaceBetween: 90,
+            },
+            800:{
+                slidesPerView: 3,
+                spaceBetween: 18,
+            }
+        },
     })
 
     new Swiper('.reviews_slider_container',{
@@ -98,23 +152,53 @@ $(document).ready(function(){
           },
     })
 
+
+
+
     new Swiper('.deleting_slider_container',{
-        slidesPerView: 4,
-        spaceBetween: 18,
+        slidesPerView: 1,
+        
         navigation: {
             nextEl: "#deleting_next",
             prevEl: "#deleting_prev",
-          },
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 2,
+                spaceBetween: 100,
+            },
+            800:{
+                slidesPerView: 3,
+                spaceBetween: 18,
+            },
+            1200:{
+                slidesPerView: 4,
+                spaceBetween: 18,
+            }
+        },
     })
 
     new Swiper('.deleting_slider_container',{
-        slidesPerView: 4,
-        spaceBetween: 18,
+        slidesPerView: 1,
+        
         navigation: {
             nextEl: "#deleting_next1",
             prevEl: "#deleting_prev1",
-          },
+        },
+        breakpoints: {
+            600: {
+                slidesPerView: 2,
+                spaceBetween: 100,
+            },
+            800:{
+                slidesPerView: 3,
+                spaceBetween: 18,
+            },
+            1200:{
+                slidesPerView: 4,
+                spaceBetween: 18,
+            }
+        },
     })
-
-
+  
 })
