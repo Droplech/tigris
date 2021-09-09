@@ -125,6 +125,75 @@ $(document).ready(function(){
     // range/
 
 
+    $('.open_modal_form').click(function(e){
+        e.preventDefault()
+        $('.modal_bg_fon').fadeIn()
+        $('.form_modal').fadeIn()
+    })
+
+    $('.modal_bg_fon, .close-form_modal').click(function(){
+        $('.modal_bg_fon').fadeOut()
+        $('.form_modal').fadeOut()
+    })
+
+
+
+
+    $('#main_form_modal').bind("submit",checkForm);
+    function checkForm(e){
+        e.preventDefault()
+
+        var el = document.getElementById('main_form_modal')
+
+        var name = el.name.value;
+        var phone = el.phone.value;
+      
+        var fail = "";
+        var acept = "Форма заполнена";
+        
+        if(name == "" || phone == "" )
+        fail = "Все поля должны быть заполнены корректно";
+
+        else if(name.length <= 1 || name.length > 50  )
+        fail = "Введите корректное имя";
+
+        else if(phone.length < 12 || phone.length > 12)
+        fail = "Номер введен некорректно"
+        
+        console.log("Name:" + " " + name + ";")
+        console.log("Phone"  + " " + phone + ";");
+        
+        if( fail != ""){
+            $("#error").html(fail)
+            $("#acept").html("")
+        }else{
+            $("#acept").html(acept)
+            $("#error").html("")
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+            
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     new Swiper('.objects_slider_container',{
         slidesPerView: 1,
         spaceBetween: 0,
