@@ -2449,7 +2449,7 @@ ul{
 }
 
 .form_modal .label_check .fake{
-    width: 14px;
+    flex: 0 0 14px;
     height: 14px;
     border: 1px solid #FEA803;
     border-radius: 2px;
@@ -3305,6 +3305,12 @@ ul{
     }
     .services_wrapper .title h1{
         font-size: 26px;
+    }
+    .form_modal{
+        width: 75%;
+    }
+    .form_modal .close-form_modal{
+        right: -30px;
     }
 }
 
