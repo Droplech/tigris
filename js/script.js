@@ -129,6 +129,9 @@ $(document).ready(function(){
         e.preventDefault()
         $('.modal_bg_fon').fadeIn()
         $('.form_modal').fadeIn()
+        let text_form = $(this).text();
+        $('.form_modal h3').html(text_form);
+        
     })
 
     $('.modal_bg_fon, .close-form_modal').click(function(){
