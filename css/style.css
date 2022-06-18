@@ -321,7 +321,7 @@ ul{
 }
 .services .services_wrapper{
     padding-top: 210px;
-    padding-bottom: 170px;
+    padding-bottom: 100px;
 }
 .services_mod{
     background-color: #fff;
@@ -625,7 +625,7 @@ ul{
 .little_about_our_wrapper{
     display: flex;
     justify-content: space-between;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 
@@ -1018,8 +1018,12 @@ ul{
     margin-top: 80px;
 }
 
-
-
+.our_clients_wrapper .our_clients_item{
+    width: 140px;
+}
+.our_clients_wrapper .our_clients_item img{
+    width: 100%;
+}
 .our_specialists{
     padding-top: 100px;
     
@@ -1204,7 +1208,7 @@ ul{
 
 
 .reviews_wrapper{
-    padding: 40px 0;
+    padding: 40px 0 0;
     border-top: 1px solid #D1D1D1;
     margin-top: 50px;
 }
@@ -1229,6 +1233,10 @@ ul{
 }
 .reviews_item .img{
     margin-top: -70px;
+    width: 282px;
+}
+.reviews_item .img img{
+    width: 100%;
 }
 .reviews_item .txt{
     margin-left: 63px;
@@ -2538,7 +2546,6 @@ ul{
         width: 889px;
     }
 }
-
 @media screen and (max-width: 1280px) {
     .img_calculator{
         width: 826px;
@@ -2562,7 +2569,6 @@ ul{
         margin-right: 9px;
     }
 } 
-
 @media screen and (max-width: 1025px) {
     .header_info_wrapper .info > div{
         margin-right: 20px;
@@ -2678,8 +2684,13 @@ ul{
         flex-basis: 33.33%;
     }
 }
-
 @media screen and (max-width: 800px){
+    h2{
+        font-size: 26px;
+    }
+    .title p{
+        font-size: 16px;
+    }
     .complex_services_content{
         justify-content: space-between;
     }
@@ -2729,13 +2740,6 @@ ul{
         text-align: center;
         margin-bottom: 20px;
     }
-
-
-
-
-
-
-
     .img_calculator{
         position: static;
         padding: 0 20px;
@@ -2909,7 +2913,6 @@ ul{
         display: none;
     }
 }
-
 @media screen and (max-width: 600px){
     .open_form_mobilCalc{
         display: none;
@@ -3018,7 +3021,7 @@ ul{
 
     .preview_block_wrapper .txt{
         padding-top: 0;
-        margin-top: 112px;
+        margin-top: 170px;
 
         z-index: 0;
     }
@@ -3311,6 +3314,9 @@ ul{
     }
     .form_modal .close-form_modal{
         right: -30px;
+    }
+    .preview_block_wrapper .txt h1 {
+        font-size: 32px;
     }
 }
 
